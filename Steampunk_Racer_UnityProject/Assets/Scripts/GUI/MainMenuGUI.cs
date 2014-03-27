@@ -2,17 +2,12 @@
 using System.Collections;
 
 public class MainMenuGUI : MonoBehaviour {
-
-	void Start()
-	{
-
-	}
 	
 	void OnGUI()
 	{
-		Rect[] buttons = new Rect[4];
+		Rect[] buttons = new Rect[3];
 		
-		for (int i = 0; i < 4; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			int w = 120;
 			int h = 40;
@@ -26,33 +21,24 @@ public class MainMenuGUI : MonoBehaviour {
 		Title.fontSize = 45;
 		Title.alignment = TextAnchor.MiddleCenter;
 		Title.normal.textColor = Color.white;
-		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-300, 400, 100), "Running On Empty", Title);
-		
-//		GameObject playerRef = GameObject.Find ("Player Info");
-//		PlayerInfoBehavior playerCode = playerRef.GetComponent<PlayerInfoBehavior>();
-		
-		if(GUI.Button (buttons[0], "Play Games"))
+		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Running On Empty", Title);
+
+		if(GUI.Button (buttons[0], "Play Now"))
 		{
 //			this.gameObject.AddComponent<PlayMenuGUI>();
 //			Destroy(this);
 		}
 
-		if(GUI.Button (buttons[1], "Change Player"))
+		if(GUI.Button (buttons[1], "Stats"))
 		{
 //			this.gameObject.AddComponent<PlayerMenuGUI>();
 //			Destroy(this);
 		}
 		
-		if(GUI.Button (buttons[2], "Settings"))
+		if(GUI.Button (buttons[2], "Options"))
 		{
 //			Debug.Log("Load the Settings");
 //			Destroy(this);
-		}
-
-		if(GUI.Button (buttons[3], "Quit"))
-		{
-//			playerCode.SaveData();
-			Application.Quit();
 		}
 	}
 }
