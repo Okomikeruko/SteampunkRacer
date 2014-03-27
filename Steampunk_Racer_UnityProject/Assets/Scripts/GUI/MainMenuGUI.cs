@@ -37,8 +37,8 @@ public class MainMenuGUI : MonoBehaviour {
 		
 		if(GUI.Button (buttons[2], "Options"))
 		{
-//			Debug.Log("Load the Settings");
-//			Destroy(this);
+			this.gameObject.AddComponent<OptionsMenuGUI>();
+			Destroy(this);
 		}
 	}
 }
