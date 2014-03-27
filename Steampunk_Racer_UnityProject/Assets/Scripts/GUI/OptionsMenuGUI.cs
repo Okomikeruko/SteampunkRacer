@@ -27,11 +27,11 @@ public class OptionsMenuGUI : MonoBehaviour {
 		
 // 		Volume Control
 		volume = GUI.HorizontalSlider(buttons[0], volume, 0.0F, 100.0F);
-		GUI.Label (buttons[0], "Volume = " + volume);
+		GUI.Label (buttons[0], "Volume = " + volume.ToString("0"));
 
 //		Sound FX Control
 		soundFX = GUI.HorizontalSlider(buttons[1], soundFX, 0.0F, 100.0F); 
-		GUI.Label (buttons[1], "Sound FX = " + soundFX);
+		GUI.Label (buttons[1], "Sound FX = " + soundFX.ToString("0"));
 
 		if(GUI.Button (buttons[2], "Main Menu"))
 		{
