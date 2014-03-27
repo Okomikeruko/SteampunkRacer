@@ -31,8 +31,8 @@ public class MainMenuGUI : MonoBehaviour {
 
 		if(GUI.Button (buttons[1], "Stats"))
 		{
-//			this.gameObject.AddComponent<PlayerMenuGUI>();
-//			Destroy(this);
+			this.gameObject.AddComponent<StatsMenuGUI>();
+			Destroy(this);
 		}
 		
 		if(GUI.Button (buttons[2], "Options"))
