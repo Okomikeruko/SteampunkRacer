@@ -25,8 +25,7 @@ public class MainMenuGUI : MonoBehaviour {
 
 		if(GUI.Button (buttons[0], "Play Now"))
 		{
-//			this.gameObject.AddComponent<PlayMenuGUI>();
-//			Destroy(this);
+			Application.LoadLevel ("game");
 		}
 
 		if(GUI.Button (buttons[1], "Stats"))
