@@ -8,6 +8,7 @@ public class GameData : MonoBehaviour {
 
 	public int Playcount = 5;
 
+	// This is an unnessary variable. We're not using it.
 	public bool test = true;
 
 	void Awake(){
