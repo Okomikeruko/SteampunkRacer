@@ -21,9 +21,9 @@ public class ResetConfirmGUI : MonoBehaviour {
 				StatsMenuGUI stats = this.gameObject.GetComponent<StatsMenuGUI>();
 				if(buttons[i] == "Confirm")
 				{
-					stats.Playcount = 0;
+					GameObject.Find ("Data").GetComponent<GameData>().Playcount = 0;
 				}
-				stats.Popup = false;
+				stats.SetPopup(false);
 				Destroy(this);
 			}
 		}

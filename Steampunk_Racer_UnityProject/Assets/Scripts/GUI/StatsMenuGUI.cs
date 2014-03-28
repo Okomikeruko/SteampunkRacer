@@ -3,10 +3,14 @@ using System.Collections;
 
 public class StatsMenuGUI : MonoBehaviour {
 
-	public bool Popup = false;
+	private bool Popup = false;
+	private GameData data;
 
-	public int Playcount = 5;
-	public Rect windowRect = new Rect(20, 20, 120, 50);
+//	public Rect windowRect = new Rect(20, 20, 120, 50);
+
+	void Start(){
+		data = GameObject.Find ("Data").GetComponent<GameData>();
+	}
 
 	void OnGUI(){
 
@@ -29,13 +33,13 @@ public class StatsMenuGUI : MonoBehaviour {
 		Title.normal.textColor = Color.white;
 		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Stats", Title);
 
-		GUI.Label (buttons[0], "Stats: You have played " + Playcount + " times.");
+		GUI.Label (buttons[0], "Stats: You have played " + data.Playcount + " times.");
 
-		GUI.enabled = !Popup;
+		GUI.enabled = !GetPopup();
 
 		if(GUI.Button (buttons[1], "Reset Stats"))
 		{
-			Popup = true;
+			SetPopup(true);
 			this.gameObject.AddComponent<ResetConfirmGUI>();
 		}
 		
@@ -45,4 +49,13 @@ public class StatsMenuGUI : MonoBehaviour {
 			Destroy(this);
 		}
 	}
+
+	public bool GetPopup(){
+		return Popup;
+	}
+
+	public void SetPopup(bool b){
+		Popup = b;
+	}
+
 }

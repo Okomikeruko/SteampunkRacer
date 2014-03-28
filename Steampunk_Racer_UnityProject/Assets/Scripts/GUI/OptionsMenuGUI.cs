@@ -3,8 +3,11 @@ using System.Collections;
 
 public class OptionsMenuGUI : MonoBehaviour {
 
-	public float volume = 50.0F;
-	public float soundFX = 50.0F;
+	private GameData data;
+
+	void Start(){
+		data = GameObject.Find ("Data").GetComponent<GameData>();
+	}
 
 	void OnGUI () {
 		Rect[] buttons = new Rect[3];
@@ -26,12 +29,12 @@ public class OptionsMenuGUI : MonoBehaviour {
 		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Options", Title);
 		
 // 		Volume Control
-		volume = GUI.HorizontalSlider(buttons[0], volume, 0.0F, 100.0F);
-		GUI.Label (buttons[0], "Volume = " + volume.ToString("0"));
+		data.volume = GUI.HorizontalSlider(buttons[0], data.volume, 0.0F, 100.0F);
+		GUI.Label (buttons[0], "Volume = " + data.volume.ToString("0"));
 
 //		Sound FX Control
-		soundFX = GUI.HorizontalSlider(buttons[1], soundFX, 0.0F, 100.0F); 
-		GUI.Label (buttons[1], "Sound FX = " + soundFX.ToString("0"));
+		data.soundFX = GUI.HorizontalSlider(buttons[1], data.soundFX, 0.0F, 100.0F); 
+		GUI.Label (buttons[1], "Sound FX = " + data.soundFX.ToString("0"));
 
 		if(GUI.Button (buttons[2], "Main Menu"))
 		{
