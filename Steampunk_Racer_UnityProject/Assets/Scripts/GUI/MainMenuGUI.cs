@@ -17,7 +17,6 @@ public class MainMenuGUI : MonoBehaviour {
 			
 			buttons[i] = new Rect((x-w)/2, ((y-((3*o)+(4*h)))/2)+((h+o)*i), w, h);
 		}
-
 		GUIStyle Title = new GUIStyle();
 		Title.fontSize = 45;
 		Title.alignment = TextAnchor.MiddleCenter;

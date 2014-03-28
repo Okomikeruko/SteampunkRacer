@@ -1,12 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\StatsMenuGUI.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GUI\MainMenuGUI.cs">
     <Files>
-      <File FileName="Assets\Scripts\GUI\OptionsMenuGUI.cs" Line="37" Column="47" />
-      <File FileName="Assets\Scripts\GUI\StatsMenuGUI.cs" Line="4" Column="42" />
-      <File FileName="Assets\Scripts\GUI\MainMenuGUI.cs" Line="28" Column="35" />
-      <File FileName="Assets\Scripts\GUI\ResetConfirmGUI.cs" Line="32" Column="1" />
-      <File FileName="Assets\Scripts\GameData.cs" Line="7" Column="31" />
+      <File FileName="Assets\Scripts\GUI\MainMenuGUI.cs" Line="4" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
