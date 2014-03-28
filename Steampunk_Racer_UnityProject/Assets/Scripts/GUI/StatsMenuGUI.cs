@@ -6,8 +6,6 @@ public class StatsMenuGUI : MonoBehaviour {
 	private bool Popup = false;
 	private GameData data;
 
-//	public Rect windowRect = new Rect(20, 20, 120, 50);
-
 	void Start(){
 		data = GameObject.Find ("Data").GetComponent<GameData>();
 	}
