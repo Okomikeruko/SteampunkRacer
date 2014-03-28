@@ -8,8 +8,6 @@ public class GameData : MonoBehaviour {
 
 	public int Playcount = 5;
 
-	public bool test = true;
-
 	void Awake(){
 		DontDestroyOnLoad(this);
 	}
