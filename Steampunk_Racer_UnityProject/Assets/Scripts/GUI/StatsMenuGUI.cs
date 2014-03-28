@@ -3,6 +3,8 @@ using System.Collections;
 
 public class StatsMenuGUI : MonoBehaviour {
 
+	public bool Popup = false;
+
 	public int Playcount = 5;
 	public Rect windowRect = new Rect(20, 20, 120, 50);
 
@@ -28,12 +30,13 @@ public class StatsMenuGUI : MonoBehaviour {
 		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Stats", Title);
 
 		GUI.Label (buttons[0], "Stats: You have played " + Playcount + " times.");
-		
+
+		GUI.enabled = !Popup;
+
 		if(GUI.Button (buttons[1], "Reset Stats"))
 		{
-
-//			this.gameObject.AddComponent<MainMenuGUI>();
-			Playcount = 0;
+			Popup = true;
+			this.gameObject.AddComponent<ResetConfirmGUI>();
 		}
 		
 		if(GUI.Button (buttons[2], "Main Menu"))
