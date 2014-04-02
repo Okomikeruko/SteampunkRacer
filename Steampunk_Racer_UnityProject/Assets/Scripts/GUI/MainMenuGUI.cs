@@ -25,6 +25,7 @@ public class MainMenuGUI : MonoBehaviour {
 
 		if(GUI.Button (buttons[0], "Play Now"))
 		{
+			GameObject.Find ("Data").GetComponent<GameData>().Playcount++;
 			Application.LoadLevel ("game");
 		}
 
