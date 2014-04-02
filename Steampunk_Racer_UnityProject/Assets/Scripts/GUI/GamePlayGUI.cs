@@ -14,7 +14,7 @@ public class GamePlayGUI : MonoBehaviour {
 	private Rect JumpButton;
 	private Rect SuicideButton; 
 
-	void Update()
+	void Start()
 	{
 		square = Screen.height / 10;
 
