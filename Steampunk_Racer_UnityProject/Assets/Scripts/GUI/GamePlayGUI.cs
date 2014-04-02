@@ -34,7 +34,7 @@ public class GamePlayGUI : MonoBehaviour {
 	{
 		if(GUI.Button (AttackButton, "Attack"))
 		{
-			// This is where you put the attack function.
+
 		}
 
 		if(GUI.Button (PauseButton, "Pause"))
