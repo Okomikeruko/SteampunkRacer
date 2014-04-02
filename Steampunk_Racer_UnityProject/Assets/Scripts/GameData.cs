@@ -13,5 +13,6 @@ public class GameData : MonoBehaviour {
 
 	void Awake(){
 		DontDestroyOnLoad(this);
+		Application.LoadLevel ("menus");
 	}
 }
