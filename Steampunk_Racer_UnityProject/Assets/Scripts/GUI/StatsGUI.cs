@@ -3,18 +3,23 @@ using System.Collections;
 
 public class StatsGUI : MonoBehaviour {
 
-	GameData Data;
 	private GUIStyle Title = new GUIStyle();
+	private GUIStyle Subtitle = new GUIStyle();
 	private Rect[] buttons = new Rect[2];
 	private string[] buttonName = new string[2];
-	
+	private string plays;	
+
 	void Start()
 	{
-//		Data = GameObject.Find ("Data").GetComponent<GameData>();
+		plays = GameObject.Find ("Data").GetComponent<GameData>().Playcount.ToString();
 		
 		Title.fontSize = 45;
 		Title.alignment = TextAnchor.MiddleCenter;
 		Title.normal.textColor = Color.white;
+
+		Subtitle.fontSize = 30;
+		Subtitle.alignment = TextAnchor.MiddleCenter;
+		Subtitle.normal.textColor = Color.white;
 
 		buttonName = new string[] {"Replay", "Main Menu"};
 
@@ -27,7 +32,8 @@ public class StatsGUI : MonoBehaviour {
 	void OnGUI()
 	{
 		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Game Over", Title);
-		
+		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-125, 400, 100), "You have played " + plays + " times.", Subtitle);
+
 		for(int i = 0; i < 2; i++)
 		{
 			if(GUI.Button (buttons[i], buttonName[i]))
