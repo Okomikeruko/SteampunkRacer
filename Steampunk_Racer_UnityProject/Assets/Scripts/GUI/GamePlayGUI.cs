@@ -16,6 +16,11 @@ public class GamePlayGUI : MonoBehaviour {
 	private Rect JumpButton;
 	private Rect SuicideButton; 
 
+	void Awake()
+	{
+		GameObject.Find("Data").GetComponent<GameData>().Playcount++;
+	}
+	
 	void Start()
 	{
 		unpaused = true;
@@ -55,7 +60,7 @@ public class GamePlayGUI : MonoBehaviour {
 
 		if(GUI.Button (SuicideButton, "Suicide"))
 		   {
-			Application.LoadLevel("menus");
+			Application.LoadLevel("endgame");
 		}
 	}
 
