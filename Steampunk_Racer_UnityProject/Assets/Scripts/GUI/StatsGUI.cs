@@ -5,9 +5,12 @@ public class StatsGUI : MonoBehaviour {
 
 	private GUIStyle Title = new GUIStyle();
 	private GUIStyle Subtitle = new GUIStyle();
+
 	private Rect[] buttons = new Rect[2];
-	private string[] buttonName = new string[2];
+
 	private string plays;	
+	private string[] buttonName = new string[2];
+	private string[] menuName = new string[2];
 
 	void Start()
 	{
@@ -22,6 +25,7 @@ public class StatsGUI : MonoBehaviour {
 		Subtitle.normal.textColor = Color.white;
 
 		buttonName = new string[] {"Replay", "Main Menu"};
+		menuName = new string[] {"game", "menus"};
 
 		for(int i = 0; i < 2; i++)
 		{
@@ -38,15 +42,7 @@ public class StatsGUI : MonoBehaviour {
 		{
 			if(GUI.Button (buttons[i], buttonName[i]))
 			{
-				if(buttonName[i] == "Replay")
-				{
-					Application.LoadLevel("game");
-				}
-				
-				if(buttonName[i] == "Main Menu")
-				{
-					Application.LoadLevel("menus");
-				}
+				Application.LoadLevel (menuName[i]);
 			}
 		}
 	}
