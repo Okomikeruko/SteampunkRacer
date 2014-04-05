@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GamePlayGUI : MonoBehaviour {
 
+	private bool unpaused;
+
 	private float square;
 	private float top;
 	private float bottom;
@@ -16,6 +18,8 @@ public class GamePlayGUI : MonoBehaviour {
 
 	void Start()
 	{
+		unpaused = true;
+
 		square = Screen.height / 10;
 
 		top = 5.0f;
@@ -27,11 +31,12 @@ public class GamePlayGUI : MonoBehaviour {
 		PauseButton = new Rect(right, top, square, square);
 		JumpButton = new Rect(left, bottom, square, square);
 		SuicideButton = new Rect(left, top, square, square); 
-
 	}
 
 	void OnGUI()
 	{
+		GUI.enabled = unpaused;
+
 		if(GUI.Button (AttackButton, "Attack"))
 		{
 
@@ -39,7 +44,8 @@ public class GamePlayGUI : MonoBehaviour {
 
 		if(GUI.Button (PauseButton, "Pause"))
 		   {
-			
+			pause();
+			this.gameObject.AddComponent<PauseGUI>();
 		}
 
 		if(GUI.Button (JumpButton, "Jump"))
@@ -51,6 +57,17 @@ public class GamePlayGUI : MonoBehaviour {
 		   {
 			Application.LoadLevel("menus");
 		}
+	}
 
+	public void pause()
+	{
+		Time.timeScale = 0;
+		unpaused = false;
+	}
+
+	public void unpause()
+	{
+		Time.timeScale = 1;
+		unpaused = true;
 	}
 }
