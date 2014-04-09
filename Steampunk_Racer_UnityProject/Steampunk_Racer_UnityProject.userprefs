@@ -1,11 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Collectable.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameData.cs">
     <Files>
-      <File FileName="Assets\Scripts\Collectable.cs" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\Collectable.cs" Line="26" Column="2" />
-      <File FileName="Assets\Scripts\GameData.cs" Line="36" Column="2" />
-      <File FileName="Assets\Scripts\GUI\OptionsMenuGUI.cs" Line="46" Column="1" />
+      <File FileName="Assets\Scripts\Collectable.cs" Line="33" Column="2" />
+      <File FileName="Assets\Scripts\GameData.cs" Line="13" Column="33" />
+      <File FileName="Assets\Scripts\GUI\OptionsMenuGUI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
