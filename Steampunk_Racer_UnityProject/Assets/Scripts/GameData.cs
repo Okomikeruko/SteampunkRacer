@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class GameData : MonoBehaviour {
@@ -11,22 +12,19 @@ public class GameData : MonoBehaviour {
 	private string[] collectableType;
 	private int[] collectableValue;
 
-	// This is an unnessary variable. We're not using it.
-	public bool test = true;
-
 	void Awake(){
 		DontDestroyOnLoad(this);
 		Application.LoadLevel ("menus");
 
-		collectableType = new string[] {"Coin"};
-		collectableValue = new int[collectableType.Length];
+		collectableType = Enum.GetNames(typeof(Collectable.typename));
+		collectableValue = new int[3];
 	}
 
-	public void collect(string type, int value)
+	public void collect(Collectable.typename type, int value)
 	{
 		for(int i = 0; i < collectableValue.Length; i++)
 		{
-			if (collectableType[i] == type)
+			if (collectableType[i] == type.ToString())
 			{
 				collectableValue[i] += value;
 				Debug.Log (collectableValue[i].ToString());

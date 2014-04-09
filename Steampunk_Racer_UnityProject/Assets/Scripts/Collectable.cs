@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Collectable : MonoBehaviour {
 
-	[SerializeField] 
-	private string type;
+	public enum typename {coin, gas, powerup, poison};
+	[SerializeField]
+	private typename type = new typename();
 	[SerializeField] 
 	private int value;
 	[SerializeField]
@@ -15,7 +16,9 @@ public class Collectable : MonoBehaviour {
 		if (collider.tag == "Player")
 		{
 			GameObject.Find("Data").GetComponent<GameData>().collect(type, value);
-			Destroy(this);
+			Object bomb = Instantiate(emitter, transform.position, Quaternion.identity);
+			Destroy(gameObject);
+			Destroy(bomb, 0.5f);
 		}
 	}
 
