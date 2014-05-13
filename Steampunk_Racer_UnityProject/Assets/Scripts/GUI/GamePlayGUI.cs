@@ -55,7 +55,7 @@ public class GamePlayGUI : MonoBehaviour {
 
 		if(GUI.Button (JumpButton, "Jump"))
 		   {
-			
+			// Run the Jump Program
 		}
 
 		if(GUI.Button (SuicideButton, "Suicide"))
