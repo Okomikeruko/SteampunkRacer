@@ -16,6 +16,8 @@ public class GamePlayGUI : MonoBehaviour {
 	private Rect JumpButton;
 	private Rect SuicideButton; 
 
+	private PlayerControl pc;
+
 	void Awake()
 	{
 		GameObject.Find("Data").GetComponent<GameData>().Playcount++;
@@ -36,6 +38,8 @@ public class GamePlayGUI : MonoBehaviour {
 		PauseButton = new Rect(right, top, square, square);
 		JumpButton = new Rect(left, bottom, square, square);
 		SuicideButton = new Rect(left, top, square, square); 
+
+		pc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 	}
 
 	void OnGUI()
@@ -44,7 +48,7 @@ public class GamePlayGUI : MonoBehaviour {
 
 		if(GUI.Button (AttackButton, "Attack"))
 		{
-
+			pc.FireAction();
 		}
 
 		if(GUI.Button (PauseButton, "Pause"))
@@ -55,7 +59,7 @@ public class GamePlayGUI : MonoBehaviour {
 
 		if(GUI.Button (JumpButton, "Jump"))
 		   {
-			// Run the Jump Program
+			pc.JumpAction();
 		}
 
 		if(GUI.Button (SuicideButton, "Suicide"))

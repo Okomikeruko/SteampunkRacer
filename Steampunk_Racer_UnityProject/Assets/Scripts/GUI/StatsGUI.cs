@@ -3,6 +3,9 @@ using System.Collections;
 
 public class StatsGUI : MonoBehaviour {
 
+	[SerializeField]
+	private string Game;
+
 	private GUIStyle Title = new GUIStyle();
 	private GUIStyle Subtitle = new GUIStyle();
 
@@ -25,7 +28,7 @@ public class StatsGUI : MonoBehaviour {
 		Subtitle.normal.textColor = Color.white;
 
 		buttonName = new string[] {"Replay", "Main Menu"};
-		menuName = new string[] {"game", "menus"};
+		menuName = new string[] {Game, "menus"};
 
 		for(int i = 0; i < 2; i++)
 		{

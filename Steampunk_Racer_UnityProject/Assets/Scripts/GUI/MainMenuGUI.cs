@@ -6,6 +6,10 @@ public class MainMenuGUI : MonoBehaviour {
 	GUIStyle Title = new GUIStyle();
 	Rect[] buttons = new Rect[3];
 
+
+	[SerializeField]
+	private string Game;
+
 	void Start()
 	{
 		for (int i = 0; i < 3; i++)
@@ -22,6 +26,8 @@ public class MainMenuGUI : MonoBehaviour {
 		Title.fontSize = 45;
 		Title.alignment = TextAnchor.MiddleCenter;
 		Title.normal.textColor = Color.white;
+
+
 	}
 
 	void OnGUI()
@@ -30,7 +36,7 @@ public class MainMenuGUI : MonoBehaviour {
 
 		if(GUI.Button (buttons[0], "Play Now"))
 		{
-			Application.LoadLevel ("game");
+			Application.LoadLevel (Game);
 		}
 
 		if(GUI.Button (buttons[1], "Stats"))
