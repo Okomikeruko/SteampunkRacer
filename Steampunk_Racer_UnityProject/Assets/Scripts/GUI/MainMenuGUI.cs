@@ -2,13 +2,16 @@
 using System.Collections;
 
 public class MainMenuGUI : MonoBehaviour {
-
-	GUIStyle Title = new GUIStyle();
+	
 	Rect[] buttons = new Rect[3];
 
 
 	[SerializeField]
 	private string Game;
+	[SerializeField]
+	private string GameTitle;
+	[SerializeField]
+	private GUIStyle TitleStyle;
 
 	void Start()
 	{
@@ -22,17 +25,11 @@ public class MainMenuGUI : MonoBehaviour {
 			
 			buttons[i] = new Rect((x-w)/2, ((y-((3*o)+(4*h)))/2)+((h+o)*i), w, h);
 		}
-
-		Title.fontSize = 45;
-		Title.alignment = TextAnchor.MiddleCenter;
-		Title.normal.textColor = Color.white;
-
-
 	}
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), "Running On Empty", Title);
+		GUI.Label (new Rect((Screen.width/2)-200, (Screen.height/2)-200, 400, 100), GameTitle, TitleStyle);
 
 		if(GUI.Button (buttons[0], "Play Now"))
 		{
@@ -42,13 +39,13 @@ public class MainMenuGUI : MonoBehaviour {
 		if(GUI.Button (buttons[1], "Stats"))
 		{
 			this.gameObject.AddComponent<StatsMenuGUI>();
-			Destroy(this);
+			this.enabled = false;
 		}
 		
 		if(GUI.Button (buttons[2], "Options"))
 		{
 			this.gameObject.AddComponent<OptionsMenuGUI>();
-			Destroy(this);
+			this.enabled = false;
 		}
 	}
 }

@@ -38,7 +38,7 @@ public class OptionsMenuGUI : MonoBehaviour {
 
 		if(GUI.Button (buttons[2], "Main Menu"))
 		{
-						this.gameObject.AddComponent<MainMenuGUI>();
+						this.gameObject.GetComponent<MainMenuGUI>().enabled = true;
 						Destroy(this);
 		}
 	}

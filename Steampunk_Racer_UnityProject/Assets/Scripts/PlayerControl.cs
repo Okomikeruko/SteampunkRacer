@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour {
 	private float jumpHeight;
 
 	private Animator anim;
+	private bool grounded = true;
 
 	// Use this for initialization
 	void Start () {
@@ -28,9 +29,29 @@ public class PlayerControl : MonoBehaviour {
 		    { fire(); }
 	}
 
+	void OnCollisionStay2D(Collision2D col)
+	{
+		if(col.gameObject.tag == "Ground")
+		{
+			grounded = true;
+		}
+	}
+
+	void OnCollisionExit2D(Collision2D col)
+	{
+		if(col.gameObject.tag == "Ground")
+		{
+			grounded = false;
+		}
+	}
+
+
 	public void JumpAction() {
-		anim.SetTrigger("Jump");
-		JumpBehavior();
+		if(grounded)
+		{
+			anim.SetTrigger("Jump");
+			JumpBehavior();
+		}
 	}
 
 	public void JumpBehavior()
